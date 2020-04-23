@@ -2,12 +2,13 @@ require 'pry'
 class Genre 
   extend Concerns::Findable
   attr_accessor :name 
+  attr_reader :songs
   
   @@all = []
   
   def initialize(name)
     @name = name 
-    @@all << self 
+    @songs = []
   end 
   
   def self.all 
